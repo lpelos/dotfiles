@@ -2,6 +2,7 @@
 	name = Lucas Pélos
 	email = lucas.pelos@gmail.com
 [alias]
+	blackmagic = reflog
 	ci = commit
 	co = checkout
 	colete = blame
