@@ -112,6 +112,7 @@ export IRBRC=$HOME/.irbrc
 export CDPATH=$CDPATH:$HOME/workspace
 export STANDALONE_PATH="$HOME/standalone"
 export ANDROID_HOME="$STANDALONE_PATH/Android"
+export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
 
 # Paths
 export PATH="./.bundle/binstubs:$PATH"                      # gems bins from local folder
@@ -125,6 +126,7 @@ export PATH="$HOME/.composer:$PATH"                         # composer
 export PATH="$HOME/.arc/arcanist/bin/:$PATH"                # arcanist
 export PATH="$ANDROID_HOME/platform-tools/:$PATH"           # android-sdk
 export PATH="$ANDROID_HOME/tools/:$PATH"                    # android-sdk
+export PATH="$ANDROID_HOME/tools/bin/:$PATH"                # android-sdk
 export PATH="$STANDALONE_PATH/android-studio/bin/:$PATH"    # android-studio
 export PATH="$STANDALONE_PATH/genymotion/:$PATH"            # genymotion
 export PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
@@ -161,3 +163,9 @@ alias stremio="$STANDALONE_PATH/stremio/Stremio.sh"
 
 # Wordpress MVC alias
 alias wpmvc="WPMVC_WORDPRESS_PATH=./htdocs/wordpress/ ./htdocs/wp-content/plugins/wp-mvc/wpmvc"
+
+###-tns-completion-start-###
+if [ -f /home/lucas/.tnsrc ]; then
+    source /home/lucas/.tnsrc
+fi
+###-tns-completion-end-###
