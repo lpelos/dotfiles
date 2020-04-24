@@ -112,7 +112,7 @@ export IRBRC=$HOME/.irbrc
 export CDPATH=$CDPATH:$HOME/workspace
 export STANDALONE_PATH="$HOME/standalone"
 export ANDROID_HOME="$STANDALONE_PATH/Android"
-export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
+# export JAVA_HOME=$(update-alternatives --query javac | sed -n -e 's/Best: *\(.*\)\/bin\/javac/\1/p')
 
 # Paths
 export PATH="./.bundle/binstubs:$PATH"                      # gems bins from local folder
@@ -148,11 +148,11 @@ else
   WORKING_DIR="${BRIGHT_RED}\w${RESET}"
 fi
 
-# GIT='$(__git_ps1 "[ %s ]")'exec $SHELL
-# export PS1="${USER_AT_HOST}:${WORKING_DIR} ${GIT}\n$ "
+GIT='$(__git_ps1 "[ %s ]")'
+export PS1="${USER_AT_HOST}:${WORKING_DIR} ${GIT}\n$ "
 
-RVM_GIT='($($rvm_bin_path/rvm-prompt)) $(__git_ps1 "[ %s ]")'
-export PS1="${USER_AT_HOST}:${WORKING_DIR} ${RVM_GIT}\n$ "
+# RVM_GIT='($($rvm_bin_path/rvm-prompt)) $(__git_ps1 "[ %s ]")'
+# export PS1="${USER_AT_HOST}:${WORKING_DIR} ${RVM_GIT}\n$ "
 
 # Standalone applications
 alias franz="$STANDALONE_PATH/Franz/Franz"
